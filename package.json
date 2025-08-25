@@ -2,9 +2,9 @@
   "name": "uniswap-camelot-arbitrage-bot",
   "version": "1.0.0",
   "description": "Arbitrage bot for Uniswap V3 and Camelot V3 on Arbitrum",
-  "main": "bot.js",
+  "main": "start.js",
   "scripts": {
-    "start": "node bot.js",
+    "start": "node start.js",
     "dev": "node bot.js",
     "test": "echo \"No tests specified\" && exit 0"
   },
