@@ -254,7 +254,7 @@ const executeTrade = async (_exchangePath, _token0, _token1, _amount) => {
   const tokenBalanceBefore = await _token0.contract.balanceOf(account.address)
   const ethBalanceBefore = await provider.getBalance(account.address)
 
-  if (config.PROJECT_SETTINGS.isDeployed) {
+  if (config.PROJECT_SETTINGS.isDeployed && arbitrage) {
     const transaction = await arbitrage.connect(account).executeTrade(
       routerPath,
       tokenPath,
@@ -263,6 +263,14 @@ const executeTrade = async (_exchangePath, _token0, _token1, _amount) => {
     )
 
     const receipt = await transaction.wait(0)
+    console.log(`Transaction Hash: ${receipt.hash}`)
+  } else {
+    if (!arbitrage) {
+      console.log(`⚠️ Arbitrage Contract Not Available - Running in Monitoring Mode Only`)
+      console.log(`💡 Profitable opportunity detected but cannot execute trade`)
+    } else {
+      console.log(`Arbitrage Contract Not Deployed, Skipping Trade...`)
+    }
   }
 
   console.log(`Trade Complete:\n`)

@@ -43,8 +43,22 @@ const camelot = {
   router: new ethers.Contract(config.CAMELOT.ROUTER_V3, ISwapRouter.abi, provider)
 }
 
-const IArbitrage = require('../artifacts/contracts/Arbitrage.sol/Arbitrage.json')
-const arbitrage = new ethers.Contract(config.PROJECT_SETTINGS.ARBITRAGE_ADDRESS, IArbitrage.abi, provider)
+// Arbitrage contract - only load if deployed and artifacts exist
+let arbitrage = null
+if (config.PROJECT_SETTINGS.isDeployed) {
+  try {
+    const IArbitrage = require('../artifacts/contracts/Arbitrage.sol/Arbitrage.json')
+    arbitrage = new ethers.Contract(config.PROJECT_SETTINGS.ARBITRAGE_ADDRESS, IArbitrage.abi, provider)
+  } catch (error) {
+    console.log("⚠️ Arbitrage contract artifacts not found. Running in monitoring mode only.")
+    console.log("   To enable trading, deploy the contract and ensure artifacts are available.")
+    // Create a minimal ABI for the arbitrage contract if needed
+    const arbitrageABI = [
+      "function executeTrade(address[] calldata routers, address[] calldata tokens, uint24 fee, uint256 amountIn) external"
+    ]
+    arbitrage = new ethers.Contract(config.PROJECT_SETTINGS.ARBITRAGE_ADDRESS, arbitrageABI, provider)
+  }
+}
 
 module.exports = {
   provider,
