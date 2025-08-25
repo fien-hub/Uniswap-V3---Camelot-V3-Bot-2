@@ -1,0 +1,76 @@
+{
+    "PROJECT_SETTINGS": {
+        "isLocal": false,
+        "isDeployed": true,
+        "ARBITRAGE_ADDRESS": "0x5176B53262B94d4B6AeaB5ab1bDce14E18Da0e7C",
+        "PRICE_UNITS": 0,
+        "PRICE_DIFFERENCE": 0.5,
+        "GAS_LIMIT": 600000,
+        "GAS_PRICE": 0.00000001
+    },
+    "TOKENS": {
+        "ARB_FOR": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+        "ARB_AGAINST": "0x912CE59144191C1204E64559FE8253a0e49E6548",
+        "POOL_FEE": 500
+    },
+    "TOKEN_PAIRS": [
+        {
+            "name": "WETH/USDC",
+            "token0": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+            "token1": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+            "fee": 500
+        },
+        {
+            "name": "WETH/USDT",
+            "token0": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+            "token1": "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9",
+            "fee": 500
+        },
+        {
+            "name": "WBTC/WETH",
+            "token0": "0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f",
+            "token1": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+            "fee": 500
+        },
+        {
+            "name": "ARB/WETH",
+            "token0": "0x912CE59144191C1204E64559FE8253a0e49E6548",
+            "token1": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+            "fee": 500
+        },
+        {
+            "name": "GMX/WETH",
+            "token0": "0xfc5A1A6EB076a2C7aD06eD22C90d7E710E35ad0a",
+            "token1": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+            "fee": 3000
+        },
+        {
+            "name": "LINK/WETH",
+            "token0": "0xf97f4df75117a78c1A5a0DBb814Af92458539FB4",
+            "token1": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+            "fee": 3000
+        },
+        {
+            "name": "MAGIC/WETH",
+            "token0": "0x539bdE0d7Dbd336b79148AA742883198BBF60342",
+            "token1": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+            "fee": 3000
+        },
+        {
+            "name": "USDC/USDT",
+            "token0": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+            "token1": "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9",
+            "fee": 500
+        }
+    ],
+    "UNISWAP": {
+        "QUOTER_V3": "0x61fFE014bA17989E743c5F6cB21bF9697530B21e",
+        "FACTORY_V3": "0x1F98431c8aD98523631AE4a59f267346ea31F984",
+        "ROUTER_V3": "0xE592427A0AEce92De3Edee1F18E0157C05861564"
+    },
+    "CAMELOT": {
+        "QUOTER_V3": "0x0Fc73040b26E9bC8514fA028D998E73A254Fa76E",
+        "FACTORY_V3": "0x1a3c9B1d2F0529D97f2afC5136Cc23e58f1FD35B",
+        "ROUTER_V3": "0x1F721E2E82F6676FCE4eA07A5958cF098D339e18"
+    }
+}
